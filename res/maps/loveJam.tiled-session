@@ -1,0 +1,71 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "level2.json",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "level1..tmj": {
+            "scale": 10.28375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 40.01458611887688,
+                "y": 40.01458611887687
+            }
+        },
+        "level1.json": {
+            "scale": 10.28375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 40.01458611887688,
+                "y": 40.01458611887687
+            }
+        },
+        "level1.tmx": {
+            "scale": 11,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 37.22727272727273,
+                "y": 24.31818181818182
+            }
+        },
+        "level2.json": {
+            "scale": 8,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 50.4375,
+                "y": 57.6875
+            }
+        },
+        "tileset.tsx": {
+            "scaleInDock": 11,
+            "scaleInEditor": 16
+        }
+    },
+    "last.exportedFilePath": "C:/Users/aguy2/Documents/GitHub/loveJam/res/maps",
+    "last.imagePath": "C:/Users/aguy2/Documents/GitHub/loveJam/res",
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "json",
+    "map.width": 20,
+    "openFiles": [
+        "tileset.tsx",
+        "level1.json",
+        "level2.json"
+    ],
+    "project": "loveJam.tiled-project",
+    "recentFiles": [
+        "tileset.tsx",
+        "level1.json",
+        "level2.json",
+        "level1.tmx",
+        "level1..tmj"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 8,
+        "width": 8
+    }
+}
