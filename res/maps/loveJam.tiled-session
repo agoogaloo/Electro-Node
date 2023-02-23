@@ -3,11 +3,131 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "level2.json",
+    "activeFile": "map.json",
+    "automapping.whileDrawing": true,
     "expandedProjectPaths": [
         "."
     ],
+    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "1-1.json": {
+            "scale": 5.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 40.00000000000001,
+                "y": 40.090909090909086
+            }
+        },
+        "1-2.json": {
+            "scale": 4,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 40,
+                "y": 32.125
+            }
+        },
+        "1-3.json": {
+            "scale": 5.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 36.18181818181819,
+                "y": 36.090909090909086
+            }
+        },
+        "1-3.tmj": {
+            "scale": 8,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 47.8125,
+                "y": 37.9375
+            }
+        },
+        "2-1.json": {
+            "scale": 5.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 36,
+                "y": 36.090909090909086
+            }
+        },
+        "2-2.json": {
+            "scale": 5.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 23.454545454545453,
+                "y": 25.36363636363636
+            }
+        },
+        "2-3.json": {
+            "scale": 8,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 78.25,
+                "y": 48.5625
+            }
+        },
+        "3-1.json": {
+            "scale": 3,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 52.333333333333314,
+                "y": 94.83333333333333
+            }
+        },
+        "3-2.json": {
+            "scale": 8,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 82,
+                "y": 53.0625
+            }
+        },
+        "3-3.json": {
+            "scale": 11,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 70.54545454545455,
+                "y": 52.86363636363636
+            }
+        },
+        "4-1.tmj": {
+            "scale": 6.3946875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 80.06646141816937,
+                "y": 60.12803596735573
+            }
+        },
+        "C:/Users/aguy2/Documents/GitHub/WeddingGame/maps/rock wall template.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/aguy2/Documents/GitHub/WeddingGame/maps/rules/wall rules.tmx": {
+            "scale": 3,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 545.1666666666666,
+                "y": 82.5
+            }
+        },
+        "C:/Users/aguy2/Documents/GitHub/WeddingGame/maps/wall prototypes.tsx": {
+            "scaleInDock": 1
+        },
+        "end.json": {
+            "scale": 4,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 98.5,
+                "y": 55.125
+            }
+        },
+        "final.json": {
+            "scale": 4,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 86.75,
+                "y": 49.875
+            }
+        },
         "level1..tmj": {
             "scale": 10.28375,
             "selectedLayer": 0,
@@ -17,11 +137,14 @@
             }
         },
         "level1.json": {
-            "scale": 10.28375,
+            "expandedGroupLayers": [
+                27
+            ],
+            "scale": 5.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 40.01458611887688,
-                "y": 40.01458611887687
+                "x": 44.09090909090909,
+                "y": 57.18181818181818
             }
         },
         "level1.tmx": {
@@ -36,34 +159,126 @@
             "scale": 8,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 50.4375,
-                "y": 57.6875
+                "x": 37.9375,
+                "y": 58.6875
+            }
+        },
+        "levels.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 3,
+            "scaleInEditor": 11
+        },
+        "light.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 5.5,
+            "scaleInEditor": 17.6055
+        },
+        "map.json": {
+            "scale": 4,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 63.25,
+                "y": 51.375
+            }
+        },
+        "map.tmj": {
+            "scale": 5.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 73.54545454545455,
+                "y": 42.45454545454545
+            }
+        },
+        "rules.json": {
+            "scale": 1.97,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 100.50761421319797,
+                "y": 120.05076142131978
+            }
+        },
+        "spark.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 32
+        },
+        "test.json": {
+            "scale": 10.28375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 39.96596572262064,
+                "y": 39.91734532636441
             }
         },
         "tileset.tsx": {
-            "scaleInDock": 11,
-            "scaleInEditor": 16
+            "dynamicWrapping": false,
+            "scaleInDock": 5.5,
+            "scaleInEditor": 8
+        },
+        "title.json": {
+            "scale": 5.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 79.9090909090909,
+                "y": 60.09090909090909
+            }
+        },
+        "tut.json": {
+            "expandedGroupLayers": [
+                27
+            ],
+            "scale": 8,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 40,
+                "y": 32.0625
+            }
         }
     },
     "last.exportedFilePath": "C:/Users/aguy2/Documents/GitHub/loveJam/res/maps",
     "last.imagePath": "C:/Users/aguy2/Documents/GitHub/loveJam/res",
+    "map.height": 15,
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "json",
+    "map.tileHeight": 8,
+    "map.tileWidth": 8,
     "map.width": 20,
     "openFiles": [
         "tileset.tsx",
-        "level1.json",
-        "level2.json"
+        "tut.json",
+        "1-1.json",
+        "rules.json",
+        "levels.tsx",
+        "map.json",
+        "2-1.json",
+        "test.json",
+        "1-2.json",
+        "1-3.json",
+        "2-2.json",
+        "3-1.json",
+        "2-3.json",
+        "3-2.json",
+        "3-3.json",
+        "final.json",
+        "end.json",
+        "4-1.tmj"
     ],
     "project": "loveJam.tiled-project",
     "recentFiles": [
+        "2-1.json",
+        "levels.tsx",
+        "rules.json",
         "tileset.tsx",
-        "level1.json",
-        "level2.json",
-        "level1.tmx",
-        "level1..tmj"
+        "tut.json",
+        "1-1.json",
+        "4-1.tmj",
+        "end.json",
+        "final.json",
+        "3-3.json",
+        "3-2.json",
+        "2-3.json"
     ],
     "tileset.lastUsedFormat": "tsx",
+    "tileset.spacing": 1,
     "tileset.tileSize": {
         "height": 8,
         "width": 8

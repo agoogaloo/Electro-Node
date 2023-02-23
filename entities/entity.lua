@@ -4,6 +4,7 @@ function Entity:new(x,y)
 	self.x = x
 	self.y = y
 	self.type = "entity"
+	self.solid = true
 end
 
 function Entity:move(dir, level, EManager)

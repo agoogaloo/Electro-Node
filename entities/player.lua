@@ -1,15 +1,13 @@
 --player class
 require "consts"
-
-
 Player = Entity:extend()
-
-
 
 
 function Player:new(x, y)
 	Player.super.new(self,x,y)	
 	self.connecting = false
+	self.newConnection = false
+	self.frame = 1
 	self.type = "player"
 	print("makin a player")
 	
@@ -18,10 +16,10 @@ end
 -- moves the player
 function Player:move(dir, level, eManager)
 	require "entities/connection"
+	local sound = require "sounds"
 	local newX = self.x
 	local newY = self.y
 	local canMove = true
-	print(dir)
 	if dir == "u" then 
 		newY = newY-1
 	elseif dir == "d" then
@@ -34,6 +32,11 @@ function Player:move(dir, level, eManager)
 	
 	local entities = eManager.getEntities()
 	for i,v in ipairs(entities) do
+		if v.solid and v.x == newX and v.y == newY then
+			canMove  =false
+		end
+	end
+	for i,v in ipairs(eManager.players) do
 		if v.x == newX and v.y == newY then
 			canMove  =false
 		end
@@ -50,16 +53,24 @@ function Player:move(dir, level, eManager)
 		end
 		self.x = newX
 		self.y = newY
+		self.frame = self.frame+1
+		if self.frame == 3 then
+			self.frame = 1
+		end
+		self:addConnections(entities)
+		sound.playSound(sound.move)
+		
+	else
+		sound.playSound(sound.blocked)		
 	end
-	
-	print(entities)
-	self:addConnections(entities)
+
+	return canMove
 	
 
 end
 
 function Player:addConnections(e)
-	print(e)
+	sound = require "sounds"
 	for i,v in ipairs(e) do
 		--if the node hasnt been connected to yet
 		if v.type == "node" and not v.connected then
@@ -68,10 +79,12 @@ function Player:addConnections(e)
 			if distance==1 then
 				if self.connecting then
 					eManager.addEntity(Connection(self.x, self.y))
+					
 				end
 				
 				self.connecting = not self.connecting
 				v:connect()
+				sound.connect:play()
 			end
 		end
 	end	
@@ -80,8 +93,15 @@ end
 
 -- draws the player
 function Player:draw()
-	love.graphics.setColor(0.9,0.4, 0.4, 1)
-	love.graphics.rectangle("line", self.x*tileSize, self.y*tileSize, tileSize, tileSize)
+	
+	local ss = require "spriteSheets"
+	
+	if self.connecting then
+		love.graphics.draw(ss.player,ss.playerQuads[self.frame+2],self.x*tileSize,self.y*tileSize)
+	else
+		love.graphics.draw(ss.player,ss.playerQuads[self.frame],self.x*tileSize,self.y*tileSize)
+	end
+	
 end
 
 
