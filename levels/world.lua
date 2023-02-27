@@ -17,17 +17,21 @@ levelIds[25]= "3-2"
 levelIds[27]= "3-3"
 
 levelIds[33]= "4-1"
-levelIds[35]= "4-2"
-levelIds[41]= "final"
+--levelIds[35]= "4-2"
+--levelIds[41]= "final"
 
 levelIds[43]= "end"
 --levelIds[29]= "test"
 
 --levelIds[9]= "1-1"
 
+
+
 local blank = 1
 local light = 30
 local player = 29
+
+
 
 function World:new()
 	self.completeLevels = {}
@@ -36,6 +40,8 @@ function World:new()
 	self.currentLevel =nil
 	self.currentId = nil
 	self.inputs = {}	
+	self.lightLevel = 0
+	self.complete = false
 end
 
 function World:loadMap(path)
@@ -93,7 +99,9 @@ end
 
 function World:move(dir, eManager)
 	
+	
 	table.insert(self.inputs, dir)
+	
 
 	if dir == "reset" then
 		self:reset(eManager)
@@ -102,19 +110,70 @@ function World:move(dir, eManager)
 		self:undo(eManager)
 	end
 	
-		
+	self:updateLightLevel(eManager)
 	if self.currentLevel ==nil then
 		self:checkLevelEnter(eManager)		
-	elseif self.currentLevel:isComplete() or dir == "esc"then
-		if self.currentLevel:isComplete() then
-			self.completeLevels[self.currentId]=true
-		end
+	elseif self.currentLevel:isComplete() then 
+		(require "sounds").win:play()
+		tick.delay(function() self:finishLevel(eManager) end,1)
+		tick.delay(function() eManager.move("end", self) end,0.25)
+		:after(function() eManager.move("end", self) end,0.25)
+		:after(function() eManager.move("end", self) end,0.25)
+		--:after(function() eManager.move("end", self) end,0.25)
+		
+		
+	elseif dir == "esc" then
 		self.currentLevel = nil
 		eManager.clearEntities()
 		self:loadMap(path)
 		self:makeEntities()
 		eManager.addEntities(self.entities)
+		self.lightLevel = 0
+
 	end
+	
+end
+
+function World:finishLevel(eManager)
+		self.completeLevels[self.currentId]=true
+		self.currentLevel = nil
+		eManager.clearEntities()
+		self:loadMap(path)
+		self:makeEntities()
+		eManager.addEntities(self.entities)
+		self:updateLightLevel(eManager) 
+		
+		for i,v in ipairs(eManager.getEntities()) do
+			if v.type == "node" then
+				return
+			end
+		end
+		self.complete = true
+end
+
+
+function World:updateLightLevel(eManager)
+	--if self.currentLevel==nil then
+	--	return 
+	--end
+	
+	local active,total = 0,0
+	
+	for i,v in ipairs(eManager.getEntities()) do
+			if v.type == "complete" then
+				total = total+1
+				active = active+1
+			end
+			
+			if v.type == "node" then
+				total = total+1
+				if v.connected then
+					active = active+1
+				end
+			end
+		end
+	self.lightLevel = active/total
+	--print("lightLevel",self.lightLevel)
 end
 
 function World:checkLevelEnter(eManager)
@@ -151,8 +210,7 @@ function World:reset(eManager)
 end
 
 function World:undo(eManager)
-	local sound = require "sounds"
-	love.audio.setVolume(0)
+	Sounds.playSounds = false
 	local inpCopy = {}
 	
 	for i,v in ipairs(self.inputs) do
@@ -160,21 +218,13 @@ function World:undo(eManager)
 	end		
 	self:reset(eManager)
 	
-	print("redoing ",#inpCopy,"actions")
 	for i=1,#inpCopy-2 do
-		print("redo",inpCopy[i])
 		eManager.move(inpCopy[i],self)
 		self.inputs[i]=inpCopy[i]
 	end
-	love.audio.stop()
-	love.audio.setVolume(1)
-	sound.playSound(sound.blocked)
+	Sounds.playSounds = true
+	Sounds.playSound(sounds.blocked)
 	
-
-		
-
-		
-		
 end
 
 
@@ -186,10 +236,8 @@ function World:loadLevel(id, eManager)
 	self.currentLevel = Level("res/maps/"..id..".json")
 	self.currentId = id
 	self.inputs = {}
-	eManager.addEntities(self.currentLevel:getEntities())
-	
-	
-	
+	eManager.addEntities(self.currentLevel:getEntities())	
+	self:updateLightLevel(eManager)
 	
 	print("loading",id)
 end

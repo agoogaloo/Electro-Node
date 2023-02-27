@@ -8,15 +8,12 @@ function Player:new(x, y)
 	self.connecting = false
 	self.newConnection = false
 	self.frame = 1
-	self.type = "player"
-	print("makin a player")
-	
+	self.type = "player"	
 end
 
 -- moves the player
 function Player:move(dir, level, eManager)
 	require "entities/connection"
-	local sound = require "sounds"
 	local newX = self.x
 	local newY = self.y
 	local canMove = true
@@ -47,21 +44,25 @@ function Player:move(dir, level, eManager)
 		canMove = false
 	end
 	
+	if canMove or dir =="end" then
+		self.frame = self.frame+1
+		if self.frame == 3 then
+			self.frame = 1
+		end
+	end
+	
+	
 	if canMove then
 		if self.connecting then
 			eManager.addEntity(Connection(self.x, self.y))
 		end
 		self.x = newX
 		self.y = newY
-		self.frame = self.frame+1
-		if self.frame == 3 then
-			self.frame = 1
-		end
 		self:addConnections(entities)
-		sound.playSound(sound.move)
+		Sounds.playSound(Sounds.move)
 		
-	else
-		sound.playSound(sound.blocked)		
+	elseif dir ~= "end" then
+		Sounds.playSound(Sounds.blocked)		
 	end
 
 	return canMove
@@ -70,7 +71,6 @@ function Player:move(dir, level, eManager)
 end
 
 function Player:addConnections(e)
-	sound = require "sounds"
 	for i,v in ipairs(e) do
 		--if the node hasnt been connected to yet
 		if v.type == "node" and not v.connected then
@@ -84,7 +84,7 @@ function Player:addConnections(e)
 				
 				self.connecting = not self.connecting
 				v:connect()
-				sound.connect:play()
+				Sounds.playSound(Sounds.connect)	
 			end
 		end
 	end	

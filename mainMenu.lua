@@ -33,7 +33,7 @@ function menu.draw()
 	else
 			love.graphics.draw(menu.frame2,8,8)
 	end
-	love.graphics.setNewFont("res/monoFont.ttf", 16)
+	--love.graphics.setNewFont("res/monoFont.ttf", 16)
 	--love.graphics.print("-PRESS ANYTHING TO START-",13,90)
 	--love.graphics.print("WASD-MOVE Z-UNDO R-RESET",16,105)
 end

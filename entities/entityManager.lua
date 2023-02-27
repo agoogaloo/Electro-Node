@@ -8,7 +8,7 @@ function EManager.move(dir, level)
 	for i,v in ipairs(EManager.players) do
 		moved = v:move(dir, level, EManager) or moved
 	end
-	if moved then 
+	if moved or dir=="end" then 
 		for i,v in ipairs(EManager.entities) do
 			v:move(dir, level, EManager)
 		end
