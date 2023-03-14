@@ -5,10 +5,11 @@ love.graphics.setDefaultFilter("nearest", "nearest")
 local muted = false
 
 function love.load()
+	print("load")
 	
 	
 	love.graphics.setShader(shader)
-  if arg[#arg] == "-debug" then 
+  if arg[#arg] == "-debug" then  
     require("mobdebug").start() 
   end	
 	
@@ -106,7 +107,7 @@ end
 
 function love.draw()
 	local ss = require "spriteSheets"
-	shader:send("light",world.lightLevel)
+	--shader:send("light",world.lightLevel)
 	
 	love.graphics.scale(pixelScale,pixelScale)
 	love.graphics.setColor(2,2,2)

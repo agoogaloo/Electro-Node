@@ -24,13 +24,18 @@ function sounds.playSound(soundList)
 
 	
 end
+loaded = false
+while not loaded do
+	if love.filesystem.getInfo("res/sounds/move1.wav") then
+		sounds.move = loadSounds("res/sounds/move",3,".wav")
+		sounds.blocked = loadSounds("res/sounds/blocked",3,".wav")
+		sounds.connect= loadSounds("res/sounds/connection",1,".wav")
+		sounds.win= love.audio.newSource("res/sounds/complete.wav","static")
+		sounds.music= love.audio.newSource("res/sounds/music.wav","static")
+		sounds.music:setLooping(true)
+		loaded  = true
+	end
+end
 
-		
-sounds.move = loadSounds("res/sounds/move",3,".wav")
-sounds.blocked = loadSounds("res/sounds/blocked",3,".wav")
-sounds.connect= loadSounds("res/sounds/connection",1,".wav")
-sounds.win= love.audio.newSource("res/sounds/complete.wav","static")
-sounds.music= love.audio.newSource("res/sounds/music.wav","stream")
-sounds.music:setLooping(true)
 
 return sounds

@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "3-3.json",
+    "activeFile": "1-2.json",
     "automapping.whileDrawing": true,
     "expandedProjectPaths": [
         "."
@@ -19,19 +19,19 @@
             }
         },
         "1-2.json": {
-            "scale": 4,
-            "selectedLayer": 0,
+            "scale": 45,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 40.125,
-                "y": 32.125
+                "x": 62.44444444444444,
+                "y": 23.300000000000004
             }
         },
         "1-3.json": {
             "scale": 5.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 36.090909090909086,
-                "y": 36.09090909090909
+                "x": 36.18181818181819,
+                "y": 36.090909090909086
             }
         },
         "1-3.tmj": {
@@ -54,15 +54,15 @@
             "scale": 5.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 43.909090909090914,
-                "y": 36.09090909090909
+                "x": 44.00000000000001,
+                "y": 36.090909090909086
             }
         },
         "2-3.json": {
             "scale": 4,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 44.125,
+                "x": 44.25,
                 "y": 44.125
             }
         },
@@ -83,11 +83,11 @@
             }
         },
         "3-3.json": {
-            "scale": 5.5,
+            "scale": 8,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 76,
-                "y": 71.9090909090909
+                "x": 87.375,
+                "y": 47.5625
             }
         },
         "4-1.json": {
@@ -288,16 +288,16 @@
     "recentFiles": [
         "map.json",
         "1-1.json",
-        "1-2.json",
-        "1-3.json",
-        "2-1.json",
-        "2-2.json",
-        "2-3.json",
-        "3-1.json",
-        "3-2.json",
         "4-2.json",
         "test.json",
-        "end.json"
+        "end.json",
+        "final.json",
+        "4-1.json",
+        "3-3.json",
+        "3-2.json",
+        "3-1.json",
+        "2-3.json",
+        "2-2.json"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.spacing": 1,
